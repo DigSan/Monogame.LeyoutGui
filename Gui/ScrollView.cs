@@ -28,7 +28,7 @@ namespace Gui
                 if (newTouch.State == TouchLocationState.Moved)
                     if (Rectangle.Intersects(new Rectangle((int)newTouch.Position.X, (int)newTouch.Position.Y, 2, 2)))
                     {
-                        _touchX = (int)newTouch.Position.X;
+                        _touchX = Direction == Direction.Horizontal ? (int)newTouch.Position.X : (int)newTouch.Position.Y;
                     }
 
 

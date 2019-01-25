@@ -45,8 +45,11 @@ namespace Gui
             int elementsValue = 0;
             foreach (var view in Views)
             {
-                var x = GetCoordinate(view.LayoutParameters.GravityX, view.LayoutParameters.OffsetX , view.Size.X,Size.X, Location.X) + Direction == Direction.Horizontal ? ContentOffest : 0;
-                var y = GetCoordinate(view.LayoutParameters.GravityY, view.LayoutParameters.OffsetY, view.Size.Y, Size.Y, Location.Y) + Direction == Direction.Vertical ? ContentOffest : 0;
+                var xOffset = Direction == Direction.Horizontal ? ContentOffest : 0;
+                var yOffset = Direction == Direction.Vertical ? ContentOffest : 0;
+
+                var x = GetCoordinate(view.LayoutParameters.GravityX, view.LayoutParameters.OffsetX , view.Size.X,Size.X, Location.X) + xOffset;
+                var y = GetCoordinate(view.LayoutParameters.GravityY, view.LayoutParameters.OffsetY, view.Size.Y, Size.Y, Location.Y) + yOffset;
 
                 view.Location = Direction == Direction.Horizontal ? new Point(x + elementsValue, y) : new Point(x, y + elementsValue);
                 elementsValue += view.Size.X;

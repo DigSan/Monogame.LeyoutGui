@@ -74,7 +74,6 @@ namespace TestGame
                 Text = "ERTre",
                 SpriteFont = Content.Load<SpriteFont>("sp")
             };
-            b.Click += B_Click;
 
             frame2.Views.Add(b);
 
@@ -130,7 +129,7 @@ namespace TestGame
                 LayoutParameters =
                     new LayoutParameters(Gravity.Start, Gravity.End)
                     {
-                        Height = 300,
+                        Height = 1000,
                         LayoutFillingX = LayoutFilling.MatchViewport
                     },
                 Background = back
@@ -256,16 +255,17 @@ namespace TestGame
                 SpriteFont = Content.Load<SpriteFont>("sp")
             });
             frame.Views.Add(hl);
+            b.Click += button =>
+            {
+                hl.Direction = hl.Direction == Direction.Horizontal ? Direction.Vertical : Direction.Horizontal;
+                hl.ApplyChanges(Point.Zero);
+            };
 
             sl.Views.Add(frame);
             sl.ApplyChanges(Point.Zero);
         }
 
         private int i;
-        private void B_Click(Button b)
-        {
-            b.Text = i++.ToString();
-        }
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
