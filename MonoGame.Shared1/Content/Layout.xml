@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <Asset Type="Gui.Models.LayoutParameters">
+    <Wight>1</Wight>
+    <Height>1</Height>
+  </Asset>
+</XnaContent>
